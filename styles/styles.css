@@ -116,6 +116,8 @@ header {
 
   display: block;
   padding: 32px 0px;
+
+  position: relative;
 }
 
 .nav-list .link.current {
@@ -147,6 +149,22 @@ header {
 .contact-list .link:hover,
 .contact-list .link:focus {
   color: var(--accent-color);
+}
+
+.nav-list .link:hover::after,
+.nav-list .link:focus::after,
+.nav-list .link.current::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+
+  background-color: var(--accent-color);
 }
 
 .contacts-icon {
@@ -302,6 +320,30 @@ header {
 
 .activity-list .item {
   flex-basis: calc((100% - 60px) / 3);
+}
+
+.activity-list .thumb {
+  position: relative;
+}
+
+.activity-list .title {
+  position: absolute;
+
+  background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 27px 0;
+  width: 100%;
+  margin-bottom: 0;
+
+  font-size: 14px;
+  text-align: center;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+
+  color: var(--white-color);
 }
 
 /* team-list */
